@@ -2,7 +2,6 @@ import {
   View,
   Text,
   FlatList,
-  Modal,
   StyleSheet,
   StatusBar,
   Image
@@ -13,18 +12,11 @@ import HomeCarousel from './HomeCarousel';
 import home_search from './home_search';
 import { commonStyles } from '../../utils/Styles';
 import renderCategoryItem from './renderCategoryItem';
-import { height, width } from '../../utils/utils';
 import { COLORS } from '../../constants/theme';
 import CustomButton from '../../component/CustomButton';
 
 export default function HomeScreen({ navigation }) {
-  const [productsData, setProductsData] = React.useState([]);
-  const [modalVisible, setModalVisible] = React.useState(false);
   const [categories, setCategories] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
-
-  React.useEffect(() => {
-    setModalVisible(true);
-  }, []);
 
   return (
     <View style={{ width: '100%', height: '100%', backgroundColor: '#fff' }}>

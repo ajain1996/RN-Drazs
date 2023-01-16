@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeScreen from '../screen/home/HomeScreen';
 import { COLORS, SIZES } from '../constants/theme';
+import CategoryScreen from '../screen/category/CategoryScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,7 +17,7 @@ const BottomTabs = () => {
         tabBarStyle: {
           position: 'absolute',
           borderRadius: 0,
-          height: 58,
+          height: 54,
           justifyContent: 'center',
           alignItems: 'center',
           borderTopStartRadius: 8,
@@ -58,8 +59,8 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
-        name="BlogsTab"
-        component={HomeScreen}
+        name="CategoryTab"
+        component={CategoryScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => {

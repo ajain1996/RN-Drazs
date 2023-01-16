@@ -36,7 +36,7 @@ export default function CustomButton({
                         alignItems: 'center',
                         ...buttonStyle
                     }]}
-                    activeOpacity={0.8} onPress={onPress}
+                    activeOpacity={0.7} onPress={onPress}
                 >
                     {icon
                         ? <View style={[styles.iconBg, { backgroundColor: iconBg }]}>
@@ -47,7 +47,7 @@ export default function CustomButton({
                     <MText
                         fs={fs} text={text}
                         textColor={textColor}
-                        fw={fw}
+                        fw={fw} textAlign="center"
                     />
                     {right ? <View style={{ width: 45, height: 20 }} /> : <></>}
                 </TouchableOpacity>
