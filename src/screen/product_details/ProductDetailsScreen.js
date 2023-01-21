@@ -5,6 +5,18 @@ import { commonStyles } from '../../utils/Styles';
 import CustomButton from '../../component/CustomButton';
 import { COLORS, SIZES } from '../../constants/theme';
 
+const itemList = [
+    { name: "Carpet Cleaning", navigate: "CarpetCleaning" },
+    { name: "Curtains Cleaning", navigate: "SingleVisitCleaning" },
+    { name: "Deep Cleaning", navigate: "DeepCleaning" },
+    { name: "Furniture Cleaning", navigate: "FurnitureMovingCleaning" },
+    { name: "Electrician", navigate: "ElectricianCleaning" },
+    { name: "AC Repair", navigate: "ACRepair" },
+    { name: "Mattress Cleaning", navigate: "GeneralPestControl" },
+    { name: "Sanitization", navigate: "FacialCleaning" },
+    { name: "Water Tank Cleaning", navigate: "CarWashPremium" },
+]
+
 export default function ProductDetailsScreen({ navigation }) {
     return (
         <ScrollView>
@@ -29,25 +41,17 @@ export default function ProductDetailsScreen({ navigation }) {
                     <View style={{ height: 8 }} />
 
                     {
-                        [
-                            "Carpet Cleaning",
-                            "Curtains Cleaning",
-                            "Deep Cleaning",
-                            "Furniture Cleaning",
-                            "Mattress Cleaning",
-                            "Sanitization",
-                            "Water Tank Cleaning"
-                        ].map((data, index) => {
+                        itemList.map((data, index) => {
                             return (
                                 <View style={{ marginVertical: 8 }} key={index}>
                                     <CustomButton
-                                        fs={16} text={data}
+                                        fs={16} text={data?.name}
                                         textColor="#000"
                                         bgColor={COLORS.white}
                                         width={SIZES.width / 1.1}
                                         height={46} fw={"600"}
                                         buttonStyle={{ borderRadius: 18, borderWidth: 1.5, borderColor: COLORS.primary }}
-                                        onPress={() => { }}
+                                        onPress={() => { navigation.navigate(data?.navigate) }}
                                     />
                                 </View>
                             );

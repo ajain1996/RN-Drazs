@@ -304,6 +304,21 @@ export const commonStyles = StyleSheet.create({
         fontWeight: "700",
         color: "#000"
     },
+    fs20_400: {
+        fontSize: 20,
+        fontWeight: "400",
+        color: "#000"
+    },
+    fs20_500: {
+        fontSize: 20,
+        fontWeight: "500",
+        color: "#000"
+    },
+    fs20_700: {
+        fontSize: 20,
+        fontWeight: "700",
+        color: "#000"
+    },
     fs22_600: {
         fontSize: 22,
         fontWeight: "600",

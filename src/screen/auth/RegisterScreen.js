@@ -41,7 +41,7 @@ export default function RegisterScreen({ navigation }) {
         } else if (password.length < 6) {
             setPasswordError("Password must be 6 characters long")
         } else {
-            navigation.navigate("Home");
+            navigation.navigate("Root");
         }
     }
 
