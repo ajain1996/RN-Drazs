@@ -24,7 +24,7 @@ const timeList = [
     { timeType: "Evening", time: "4 PM - 8 PM" },
 ]
 
-export default function CarpetCleaningService({ navigation }) {
+export default function CurtainsCleaningService({ navigation }) {
     return (
         <>
             <StatusBar backgroundColor={COLORS.primary} barStyle="light-content" />

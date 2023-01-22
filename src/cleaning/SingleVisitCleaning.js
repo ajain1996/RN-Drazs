@@ -67,7 +67,7 @@ export default function SingleVisitCleaning({ navigation }) {
                         textColor={COLORS.white}
                         bgColor={COLORS.primary}
                         width={"100%"} height={50}
-                        onPress={() => { navigation.navigate("DeepCleaning") }}
+                        onPress={() => { navigation.navigate("CurtainsCleaningService") }}
                     />
                 </View>
             </View>

@@ -4,7 +4,7 @@ import { commonStyles } from '../utils/Styles'
 import CustomButton from '../component/CustomButton'
 import { COLORS } from '../constants/theme'
 
-export default function ACRepair({ navigation }) {
+export default function ManiPedi({ navigation }) {
     return (
         <ScrollView>
             <View>
@@ -14,20 +14,23 @@ export default function ACRepair({ navigation }) {
                 />
 
                 <View style={{ paddingHorizontal: 16, paddingVertical: 12 }}>
-                    <Text style={{ ...commonStyles.fs20_700, marginBottom: 10 }}>AC Repair</Text>
+                    <View style={styles.displayBox}>
+                        <Text style={{ ...commonStyles.fs13_400, marginTop: 4 }}>
+                            {"• Trimming and cleaning nails Nails coloring."}
+                        </Text>
+                        <Text style={{ ...commonStyles.fs13_400, marginTop: 2 }}>
+                            {"• Lavender oil massage for hands and feet."}
+                        </Text>
+                    </View>
+
+                    <Text style={{ ...commonStyles.fs20_700, marginBottom: 10 }}>Important notice:</Text>
 
                     <View style={styles.displayBox}>
                         <Text style={{ ...commonStyles.fs13_400 }}>
-                            {"• AC repair includes assessing / detecting and fixing issues in ACS."}
-                        </Text>
-                        <Text style={{ ...commonStyles.fs13_400, marginTop: 2 }}>
-                            {"• Final price of service is determined after inspection."}
+                            {"• Service duration 60 minutes per person"}
                         </Text>
                         <Text style={{ ...commonStyles.fs13_400 }}>
-                            {"• There is a charge of SR 25 for on site visit inspections."}
-                        </Text>
-                        <Text style={{ ...commonStyles.fs13_400, marginTop: 2 }}>
-                            {"• Prices include labor costs only. All spare parts are charged separately."}
+                            {"• In case of ordering the service for more than 1 person, all individuals receiving the service must be present at the same address registered on the app"}
                         </Text>
                     </View>
 
@@ -36,7 +39,7 @@ export default function ACRepair({ navigation }) {
                         textColor={COLORS.white}
                         bgColor={COLORS.primary}
                         width={"100%"} height={50}
-                        onPress={() => { navigation.navigate("ACService") }}
+                        onPress={() => { navigation.navigate("ACRepair") }}
                     />
                 </View>
             </View>

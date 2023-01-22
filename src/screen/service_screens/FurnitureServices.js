@@ -20,15 +20,9 @@ const dateList = [
 ]
 
 const timeList = [
-    { timeType: "AM", time: "10 AM - 11 AM" },
-    { timeType: "AM", time: "11 AM - 12 AM" },
-    { timeType: "PM", time: "12 PM - 1 PM" },
-    { timeType: "PM", time: "1 PM - 2 PM" },
-    { timeType: "AM", time: "2 PM - 3 PM" },
-    { timeType: "PM", time: "3 PM - 4 PM" },
-    { timeType: "PM", time: "4 PM - 5 PM" },
-    { timeType: "PM", time: "5 PM - 6 PM" },
-    { timeType: "PM", time: "6 PM - 7 PM" },
+    { timeType: "Morning", time: "8 AM - 12 PM" },
+    { timeType: "Afternoon", time: "12 PM - 4 PM" },
+    { timeType: "Evening", time: "4 PM - 8 PM" },
 ]
 
 export default function FurnitureServices({ navigation }) {

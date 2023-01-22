@@ -14,9 +14,14 @@ import { commonStyles } from '../../utils/Styles';
 import renderCategoryItem from './renderCategoryItem';
 import { COLORS } from '../../constants/theme';
 import CustomButton from '../../component/CustomButton';
+import { itemList } from '../product_details/ProductDetailsScreen';
 
 export default function HomeScreen({ navigation }) {
-  const [categories, setCategories] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
+  const [categories, setCategories] = useState([]);
+
+  React.useEffect(() => {
+    setCategories(itemList);
+  }, [])
 
   return (
     <View style={{ width: '100%', height: '100%', backgroundColor: '#fff' }}>

@@ -5,13 +5,17 @@ import { commonStyles } from '../../utils/Styles';
 import CustomButton from '../../component/CustomButton';
 import { COLORS, SIZES } from '../../constants/theme';
 
-const itemList = [
+export const itemList = [
     { name: "Carpet Cleaning", navigate: "CarpetCleaning" },
     { name: "Curtains Cleaning", navigate: "SingleVisitCleaning" },
     { name: "Deep Cleaning", navigate: "DeepCleaning" },
     { name: "Furniture Cleaning", navigate: "FurnitureMovingCleaning" },
     { name: "Electrician", navigate: "ElectricianCleaning" },
-    { name: "AC Repair", navigate: "ACRepair" },
+    { name: "AC Repair", navigate: "ACCleaningGasFilling" },
+    { name: "Facial", navigate: "FacialCleaning" },
+    { name: "Healing Massages", navigate: "HealingMassages" },
+    { name: "Relaxing Massages", navigate: "RelaxingMassages" },
+    { name: "Mani-Pedi with Color", navigate: "ManiPedi" },
     { name: "Mattress Cleaning", navigate: "GeneralPestControl" },
     { name: "Sanitization", navigate: "FacialCleaning" },
     { name: "Water Tank Cleaning", navigate: "CarWashPremium" },

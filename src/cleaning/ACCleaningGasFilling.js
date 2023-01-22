@@ -39,7 +39,7 @@ export default function ACCleaningGasFilling({ navigation }) {
                         textColor={COLORS.white}
                         bgColor={COLORS.primary}
                         width={"100%"} height={50}
-                        onPress={() => { navigation.navigate("GeneralPestControl") }}
+                        onPress={() => { navigation.navigate("ACService") }}
                     />
                 </View>
             </View>

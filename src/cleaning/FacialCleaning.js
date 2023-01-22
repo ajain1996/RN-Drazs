@@ -36,7 +36,7 @@ export default function FacialCleaning({ navigation }) {
                         textColor={COLORS.white}
                         bgColor={COLORS.primary}
                         width={"100%"} height={50}
-                        onPress={() => { navigation.navigate("GeneralPestControl") }}
+                        onPress={() => { navigation.navigate("FacialService") }}
                     />
                 </View>
             </View>

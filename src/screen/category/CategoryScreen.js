@@ -40,7 +40,6 @@ export default function CategoryScreen({ navigation }) {
 }
 
 function renderSingleItem(item, navigation) {
-    //   console.log(item.image1, '\n\n\n\n\n item');
     return (
         <TouchableHighlight
             underlayColor="#eee"

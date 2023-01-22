@@ -1,8 +1,7 @@
-import { View, Text, ScrollView, StyleSheet, TouchableHighlight, TextInput, StatusBar, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, TouchableHighlight, TextInput, StatusBar } from 'react-native'
 import React from 'react'
 import { commonStyles } from '../../utils/Styles'
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import { Button } from 'react-native-paper'
 import { COLORS, SIZES } from '../../constants/theme'
 import CustomButton from '../../component/CustomButton'
 import CustomHeader from '../../component/CustomHeader'
@@ -26,25 +25,22 @@ const timeList = [
     { timeType: "Evening", time: "4 PM - 8 PM" },
 ]
 
-export default function DeepCleaningService({ navigation }) {
+export default function MatressService({ navigation }) {
     return (
         <>
             <StatusBar backgroundColor={COLORS.primary} barStyle="light-content" />
-            <CustomHeader title="Deep Cleaning" navigation={navigation} />
+            <CustomHeader title="Matress Cleaning" navigation={navigation} />
             <Text />
             <ScrollView>
-                <RenderResidenceType
-                    title="What is your residence type?"
-                    list={[
-                        { name: "Apartment", image: require("../../assets/apartment.png") },
-                        { name: "Villa", image: require("../../assets/villa.png") }
-                    ]}
+                <RenderNumberBox
+                    title="Select the number of persons that will recieve the service."
+                    list={[1, 2, 3, 4, 5, 6, 7, 8]}
                 />
                 <CustomDivider />
 
                 <RenderNumberBox
-                    title="Select the number of bedrooms"
-                    list={[1, 2, 3, 4, 5]}
+                    title="Would you like to clean some pillows as well?"
+                    list={[1, 2, 3, 4, 5, 6, 7, 8]}
                 />
                 <CustomDivider />
 
@@ -88,50 +84,19 @@ export default function DeepCleaningService({ navigation }) {
     )
 }
 
-const RenderResidenceType = ({ title, onPress }) => {
-    return (
-        <View style={{}}>
-            <Text style={{ ...commonStyles.fs13_400, paddingHorizontal: 16 }}>
-                {title}
-            </Text>
-
-            <ScrollView horizontal style={{ paddingLeft: 8, marginTop: 5 }}>
-                <TouchableOpacity
-                    style={styles.residenceType}
-                    onPress={onPress}
-                >
-                    <MaterialIcons name="apartment" size={26} color="#fff" />
-                    <Text style={{ ...commonStyles.fs14_400, color: "#fff", marginLeft: 10 }}>
-                        Apartment
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={styles.residenceType}
-                    onPress={onPress}
-                >
-                    <MaterialCommunityIcons name="warehouse" size={26} color="#fff" />
-                    <Text style={{ ...commonStyles.fs14_400, color: "#fff", marginLeft: 10 }}>
-                        Villa
-                    </Text>
-                </TouchableOpacity>
-            </ScrollView>
-        </View>
-    );
-}
-
 const styles = StyleSheet.create({
-    residenceType: {
-        height: 46, backgroundColor: COLORS.primary,
+    numberOfCarpets: {
+        width: 46, height: 46, backgroundColor: COLORS.primary,
         marginLeft: 8, borderRadius: 8,
-        ...commonStyles.rowBetween, paddingHorizontal: 15
+        ...commonStyles.centerStyles
     },
     dateOfCarpets: {
-        width: 54, height: 80, backgroundColor: COLORS.primary,
+        width: 68, height: 80, backgroundColor: COLORS.primary,
         marginLeft: 8, borderRadius: 8,
         ...commonStyles.centerStyles
     },
     timeOfCarpets: {
-        width: 100, height: 54, backgroundColor: COLORS.primary,
+        width: 116, height: 54, backgroundColor: COLORS.primary,
         marginLeft: 8, borderRadius: 8,
         ...commonStyles.centerStyles
     },
