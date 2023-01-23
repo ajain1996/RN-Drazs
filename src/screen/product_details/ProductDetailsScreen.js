@@ -1,9 +1,10 @@
-import { View, Text, StyleSheet, ScrollView, StatusBar } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, StatusBar, ImageBackground, TouchableHighlight } from 'react-native'
 import React from 'react'
 import CustomHeader from '../../component/CustomHeader'
 import { commonStyles } from '../../utils/Styles';
 import CustomButton from '../../component/CustomButton';
 import { COLORS, SIZES } from '../../constants/theme';
+import MText from '../../component/MText';
 
 export const itemList = [
     { name: "Carpet Cleaning", navigate: "CarpetCleaning" },
@@ -21,49 +22,57 @@ export const itemList = [
     { name: "Water Tank Cleaning", navigate: "CarWashPremium" },
 ]
 
-export default function ProductDetailsScreen({ navigation }) {
+export default function ProductDetailsScreen({ navigation, route }) {
+    const { item } = route?.params;
+
     return (
-        <ScrollView>
+        <>
             <StatusBar backgroundColor={COLORS.primary} barStyle="light-content" />
-            <View>
-                <CustomHeader title="0.Special Offer" navigation={navigation} />
+            <CustomHeader title="0.Special Offer" navigation={navigation} />
+            <ScrollView>
                 <View style={styles.categoriesText}>
                     <Text style={{ ...commonStyles.fs17_500 }}>
                         Subcategories
                     </Text>
-                    <View style={{ height: 10 }} />
-
-                    <CustomButton
-                        fs={16} text={"All"}
-                        textColor={COLORS.white}
-                        bgColor={COLORS.primary}
-                        width={SIZES.width / 1.1}
-                        height={48} fw={"600"}
-                        buttonStyle={{ borderRadius: 18 }}
-                        onPress={() => { }}
-                    />
-                    <View style={{ height: 8 }} />
 
                     {
-                        itemList.map((data, index) => {
+                        [
+                            require("../../assets/ser/s1.jpg"),
+                            require("../../assets/ser/s2.jpg"),
+                            require("../../assets/ser/s3.jpg"),
+                            require("../../assets/ser/s4.jpg"),
+                            require("../../assets/ser/s5.jpg"),
+                            require("../../assets/ser/s6.jpg"),
+                        ].map((data, index) => {
                             return (
-                                <View style={{ marginVertical: 8 }} key={index}>
-                                    <CustomButton
-                                        fs={16} text={data?.name}
-                                        textColor="#000"
-                                        bgColor={COLORS.white}
-                                        width={SIZES.width / 1.1}
-                                        height={46} fw={"600"}
-                                        buttonStyle={{ borderRadius: 18, borderWidth: 1.5, borderColor: COLORS.primary }}
-                                        onPress={() => { navigation.navigate(data?.navigate) }}
-                                    />
-                                </View>
+                                <TouchableHighlight style={{ marginVertical: 8 }} key={index}
+                                    onPress={() => { navigation.navigate(item?.navigate) }}
+                                >
+                                    <ImageBackground
+                                        source={data} resizeMode="stretch" blurRadius={1}
+                                        style={{ width: "100%", height: 220, justifyContent: 'flex-end' }}
+                                        imageStyle={{ borderRadius: 8 }}
+                                    >
+                                        <View style={{ paddingHorizontal: 16, paddingVertical: 10 }}>
+                                            <MText
+                                                text="Home Cleaning for 110 SR"
+                                                fs={16} fw="700"
+                                                textColor="#fff"
+                                            />
+                                            <MText
+                                                text="Home Cleaning for 110 SR"
+                                                fs={12} fw="400"
+                                                textColor="#fff"
+                                            />
+                                        </View>
+                                    </ImageBackground>
+                                </TouchableHighlight>
                             );
                         })
                     }
                 </View>
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </>
     )
 }
 
@@ -72,6 +81,6 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
         width: '100%',
         paddingHorizontal: 16,
-        marginTop: "12%"
+        marginTop: 20
     }
 });

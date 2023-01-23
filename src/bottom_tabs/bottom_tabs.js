@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screen/home/HomeScreen';
 import { COLORS, SIZES } from '../constants/theme';
 import CategoryScreen from '../screen/category/CategoryScreen';
+import ProfileScreen from '../screen/auth/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -44,37 +45,6 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
-        name="NewsTab"
-        component={HomeScreen}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({ focused }) => {
-            return (
-              <BuildTabComponent
-                image={require('../assets/review.png')}
-                focused={focused}
-              />
-            );
-          },
-        }}
-      />
-      <Tab.Screen
-        name="CategoryTab"
-        component={CategoryScreen}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({ focused }) => {
-            return (
-              <BuildTabComponent
-                image={require('../assets/dashboard.png')}
-                text={`Blogs`}
-                focused={focused}
-              />
-            );
-          },
-        }}
-      />
-      <Tab.Screen
         name="ChatsTab"
         component={HomeScreen}
         options={{
@@ -90,8 +60,8 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
-        name="ChatsTab2"
-        component={HomeScreen}
+        name="ProfileTab"
+        component={ProfileScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => {

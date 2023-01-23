@@ -9,8 +9,8 @@ export default function renderCategoryItem(item, navigation) {
       underlayColor="#eee"
       style={styles.container}
       onPress={() => {
-        navigation.navigate(item?.navigate, {
-          product: item,
+        navigation.navigate("ProductDetailsScreen", {
+          item: item,
         });
       }}>
       <View style={styles.wrapper}>

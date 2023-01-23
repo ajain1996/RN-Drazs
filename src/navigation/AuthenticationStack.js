@@ -30,6 +30,9 @@ import FacialService from '../screen/service_screens/FacialService';
 import MatressService from '../screen/service_screens/MatressService';
 import MassagesService from '../screen/service_screens/MassagesService';
 import ManiPediService from '../screen/service_screens/ManiPediService';
+import ProductDetailsScreen from '../screen/product_details/ProductDetailsScreen';
+import ProfileScreen from '../screen/auth/ProfileScreen';
+import LocationScreen from '../screen/auth/LocationScreen';
 
 const Stack = createStackNavigator();
 
@@ -44,12 +47,14 @@ export default function AuthenticationStack() {
         headerShown: false,
         ...TransitionPresets.SlideFromRightIOS,
       }}
-      initialRouteName="Root"
+      initialRouteName="LoginScreen"
     >
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="LocationScreen" component={LocationScreen} />
       <Stack.Screen name="Root" component={BottomTabs} />
+      <Stack.Screen name="ProductDetailsScreen" component={ProductDetailsScreen} />
       <Stack.Screen name="CategoryScreen" component={CategoryScreen} />
       <Stack.Screen name="SingleVisitCleaning" component={SingleVisitCleaning} />
       <Stack.Screen name="CurtainsCleaningService" component={CurtainsCleaningService} />
@@ -75,6 +80,7 @@ export default function AuthenticationStack() {
       <Stack.Screen name="MatressService" component={MatressService} />
       <Stack.Screen name="MassagesService" component={MassagesService} />
       <Stack.Screen name="ManiPediService" component={ManiPediService} />
+      <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
     </Stack.Navigator>
   );
 }

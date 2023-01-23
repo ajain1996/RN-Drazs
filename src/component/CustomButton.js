@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, TouchableHighlight } from 'react-native'
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
@@ -22,21 +22,25 @@ export default function CustomButton({
     icon, onPress, iconColor,
     borderWidth, buttonStyle,
     right, iconBg, iconSize,
-    iconType
+    iconType, underlayColor,
+    borderRadius
 }) {
     if (!borderWidth) {
         return (
-            <View style={{ alignItems: 'center' }}>
-                <TouchableOpacity
+            <TouchableHighlight style={{ alignItems: 'center', borderRadius: borderRadius }}
+                onPress={onPress} underlayColor={underlayColor}
+            >
+                <View
                     style={[styles.submit_btn, {
                         backgroundColor: bgColor,
                         width: width, height: height,
                         flexDirection: 'row',
                         justifyContent: 'center',
                         alignItems: 'center',
+                        borderRadius: borderRadius,
                         ...buttonStyle
                     }]}
-                    activeOpacity={0.7} onPress={onPress}
+                    activeOpacity={0.7}
                 >
                     {icon
                         ? <View style={[styles.iconBg, { backgroundColor: iconBg }]}>
@@ -50,13 +54,15 @@ export default function CustomButton({
                         fw={fw} textAlign="center"
                     />
                     {right ? <View style={{ width: 45, height: 20 }} /> : <></>}
-                </TouchableOpacity>
-            </View>
+                </View>
+            </TouchableHighlight>
         )
     } else {
         return (
-            <View style={{ alignItems: 'center' }}>
-                <TouchableOpacity
+            <TouchableHighlight style={{ alignItems: 'center', borderRadius: borderRadius }}
+                onPress={onPress} underlayColor={underlayColor}
+            >
+                <View
                     style={[styles.submit_btn, {
                         backgroundColor: COLORS.transparent,
                         width: width, height: height,
@@ -65,7 +71,6 @@ export default function CustomButton({
                         alignItems: 'center',
                         borderWidth: 1, borderColor: bgColor,
                     }]}
-                    activeOpacity={0.8} onPress={onPress}
                 >
                     {icon ? <Entypo name={icon} color={iconColor} size={18} /> : <></>}
                     {icon ? <View style={{ width: 8 }} /> : <></>}
@@ -74,8 +79,8 @@ export default function CustomButton({
                         textColor={textColor}
                         fw={fw}
                     />
-                </TouchableOpacity>
-            </View>
+                </View>
+            </TouchableHighlight>
         )
     }
 }
